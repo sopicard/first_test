@@ -8,16 +8,24 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Bonjour</h1>
-    </header>
-    <main>
+<header>
+    <h1>Bonjour</h1>
+</header>
+<main>
+    {% if category.published %}
+    <article style="background-color:{{category.color}};">
+        <h2>{{category.title}}</h2>
+        <p> {{category.description}}</p>
+    </article>
+    {% else %}
+    <p>L'article n'est pas publié</p>
+    {% endif %}
 
 
-    </main>
-    <footer>
+</main>
+<footer>
 
-    </footer>
+</footer>
 
 </body>
 </html>

@@ -28,5 +28,26 @@ class HomeController extends AbstractController
         return $this->render("first_test.html.twig",[
         "name"=>$name]);
     }
+
+    //je créé une nouvelle route pour mon tableau
+    /**
+     * @Route ("/category", name="category")
+     */
+
+    //j'associe la fonction "table" à ma route
+    public function table()
+    {
+        //fake tableau qui viendrait de ma bdd
+        $category = [
+            'title' => 'Politique',
+            'color' => 'red',
+            'published' => false,
+            'description' => 'Décrypter l\'actualité politique avec le prisme de David Robert'
+        ];
+
+        //même procédé que pour mon first-test mais en ayant créé un nouveau fichier twig qui
+        //appelle le tableau complet
+        return $this->render("table.html.twig",["category"=>$category]);
+    }
 }
 
