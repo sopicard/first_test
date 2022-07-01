@@ -1,31 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Stars</title>
-</head>
-<body>
-    <header>
+{% include"_header.html.twig" %}
+    <main>
+       {% for star in stars  %}
+           {% if star.published %}
+            <article style="background-color: {{ star.color }};">
+                <img src="{{ star.image }}" alt="tête de star" style="width:20%">
+                <h2>{{ star.title }}</h2>
+                <p>{{ star.publishedDate|date("m/d/Y") }}</p>
+            </article>
+           {% else %}
+               <p>L'article n'est pas publié</p>
+           {% endif %}
+       {% endfor %}
+    </main>
 
-    </header>
-        <main>
-           {% for star in stars  %}
-               {% if star.published %}
-                <article style="background-color: {{ star.color }};">
-                    <img src="{{ star.image }}" alt="tête de star" style="width:20%">
-                    <h2>{{ star.title }}</h2>
-                    <p>{{ star.publishedDate|date("m/d/Y") }}</p>
-                </article>
-               {% else %}
-                   <p>L'article n'est pas publié</p>
-               {% endif %}
-           {% endfor %}
-        </main>
-    <footer>
-
-    </footer>
-</body>
-</html>
+{% include"_footer.html.twig" %}
