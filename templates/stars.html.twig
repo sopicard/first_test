@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stars</title>
+</head>
+<body>
+    <header>
+
+    </header>
+        <main>
+           {% for star in stars  %}
+               {% if star.published %}
+                <article style="border: 2px solid {{ star.color }};">
+                    <img src="{{ star.image }}" alt="tête de star">
+                    <h2>{{ star.title }}</h2>
+                    <p>{{ star.publishedDate|date("m/d/Y") }}</p>
+                </article>
+               {% else %}
+                   <p>L'article n'est pas publié</p>
+               {% endif %}
+           {% endfor %}
+        </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
