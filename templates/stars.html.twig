@@ -14,8 +14,8 @@
         <main>
            {% for star in stars  %}
                {% if star.published %}
-                <article style="border: 2px solid {{ star.color }};">
-                    <img src="{{ star.image }}" alt="tête de star">
+                <article style="background-color: {{ star.color }};">
+                    <img src="{{ star.image }}" alt="tête de star" style="width:20%">
                     <h2>{{ star.title }}</h2>
                     <p>{{ star.publishedDate|date("m/d/Y") }}</p>
                 </article>
