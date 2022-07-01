@@ -61,12 +61,12 @@ class StarsController extends AbstractController
     // je crée une nouvelle route ainsi su'une nouvelle fonction nommées différemment mais avec le même "fake" tableau
     // que Stars pour cibler grâce à l'id
     /**
-     * @Route ("/personalities/{id}", name="personalities")
+     * @Route ("/personality/{id}", name="personality")
      */
 
-    public function personalities($id)
+    public function personality($id)
     {
-        $personalities = [
+        $personality = [
             1 => [
                 'title' => 'Tex',
                 'color' => 'red',
@@ -109,7 +109,7 @@ class StarsController extends AbstractController
             ]
         ];
 
-        return $this->render("personalities.html.twig", ["personalities" => $personalities[$id]]);
+        return $this->render("personality.html.twig", ["personality" => $personality[$id]]);
 
     }
 }

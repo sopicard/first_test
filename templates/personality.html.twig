@@ -1,0 +1,13 @@
+{% include"_header.html.twig" %}
+
+    {% if personality.published %}
+        <article style="background-color: {{ personality.color }};">
+            <img src="{{ personality.image }}" alt="tête de star" style="width:20%">
+            <h2>{{  personality.title }}</h2>
+            <p>{{  personality.publishedDate|date("m/d/Y") }}</p>
+        </article>
+    {% else %}
+        <p>L'article n'est pas publié</p>
+    {% endif %}
+
+{% include"_footer.html.twig" %}
