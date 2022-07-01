@@ -1,6 +1,5 @@
 {% include"_header.html.twig" %}
 
-<main>
     {% if category.published %}
     <article style="background-color:{{category.color}};">
         <h2>{{category.title}}</h2>
@@ -9,6 +8,5 @@
     {% else %}
     <p>L'article n'est pas publié</p>
     {% endif %}
-</main>
 
 {% include"_footer.html.twig" %}

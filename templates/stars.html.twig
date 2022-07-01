@@ -1,17 +1,21 @@
 {% include"_header.html.twig" %}
 
-    <main>
        {% for star in stars  %}
            {% if star.published %}
             <article style="background-color: {{ star.color }};">
                 <img src="{{ star.image }}" alt="tête de star" style="width:20%">
                 <h2>{{ star.title }}</h2>
                 <p>{{ star.publishedDate|date("m/d/Y") }}</p>
+                <a href={{ path("personalities", {"id": star.id}) }}>Afficher le decriptif complet</a>
+                {# pour créer un lien vers une autre page, on ne met pas d'adresse brute car en cas de changements d'url
+                   ou d'environnement, le chemin ne sera pas trouvé.
+                   La fonction path permet de placer un premier paramètre avec le nom de la route (ici celle qui affiche 1 star)
+                   et en 2nd le paramètre avec l'id à afficher (même principe, on lui indique l'id à aller chercher
+                   plutôt que le numéro en dur#}
             </article>
            {% else %}
                <p>L'article n'est pas publié</p>
            {% endif %}
        {% endfor %}
-    </main>
 
 {% include"_footer.html.twig" %}

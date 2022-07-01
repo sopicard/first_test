@@ -1,7 +1,5 @@
 {% include"_header.html.twig" %}
 
-<main>
-
     {% if personalities.published %}
         <article style="background-color: {{ personalities.color }};">
             <img src="{{ personalities.image }}" alt="tête de star" style="width:20%">
@@ -11,7 +9,5 @@
     {% else %}
         <p>L'article n'est pas publié</p>
     {% endif %}
-
-</main>
 
 {% include"_footer.html.twig" %}
